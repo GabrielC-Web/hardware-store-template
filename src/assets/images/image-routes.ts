@@ -36,5 +36,4 @@ export const products = {
     sparePart7: 'assets/images/products/spare_part7.jpg',
     sparePart8: 'assets/images/products/spare_part8.jpg',
     sparePart9: 'assets/images/products/spare_part9.png',
-    sparePart10: 'assets/images/products/spare_part10.png',
 }

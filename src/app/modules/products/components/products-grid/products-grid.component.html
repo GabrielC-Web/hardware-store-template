@@ -1,0 +1,27 @@
+<div class="row w-100 h-100 bg-white">
+
+    <!-- Filtros -->
+
+    <!-- Productos -->
+    <div *ngFor="let post of products" class="col-4 mb-4" [routerLink]="'detail'">
+
+        <div class="w-100 cursor-pointer d-flex justify-content-center">
+
+            <img [ngStyle]="{'width': imageSize.width}" [src]="post.img" alt="" style="aspect-ratio: 9/12;">
+
+        </div>
+
+        <div class="d-flex flex-column text-center mt-4">
+            <strong style="font-weight: 700;">{{post.productName}}</strong>
+            <span>{{post.brandName}}</span>
+            <span style="text-decoration: line-through;">{{post.originalPrice}}</span>
+            <span>{{post.discountPrice}}</span>
+        </div>
+
+    </div>
+
+    <!-- Paginador -->
+    <cmp-products-paginator *ngIf="showPaginator" [posts]="products"
+        justifyContentClass="justify-content-between"></cmp-products-paginator>
+
+</div>

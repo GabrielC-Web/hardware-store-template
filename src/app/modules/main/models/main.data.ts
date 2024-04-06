@@ -1,4 +1,4 @@
-import { icons, logos } from "src/assets/images/image-routes";
+import { icons, logos, products } from "src/assets/images/image-routes";
 
 /**
  * Objeto con data cableada para toda la plantilla
@@ -116,6 +116,145 @@ export const mainData = {
                         'Transmisión',
                         'Aceite'
                     ]
+                },
+            ]
+        }
+    },
+    productsModule: {
+        products: {
+            count: 30,
+            items: [
+                {
+                    img: products.sparePart1,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart2,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart3,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart4,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart5,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart6,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart7,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart8,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart9,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart2,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart1,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+                {
+                    img: products.sparePart5,
+                    productName: 'GENERAL MOTORS',
+                    brandName: 'Refrigerante Dex Cool Importado',
+                    originalPrice: 'Ref.23.00',
+                    discountPrice: 'Ref.22.00'
+                },
+            ]
+        },
+        sidenav: {
+            categorieTypes: [
+                {
+                    name: 'Todos'
+                },
+                {
+                    name: 'Promociones'
+                },
+                {
+                    name: 'Mantenimiento'
+                },
+                {
+                    name: 'Exterior'
+                },
+                {
+                    name: 'Motor'
+                },
+                {
+                    name: 'Tren Motriz',
+                    children: [
+                        {
+                            name: 'Componentes'
+                        },
+                        {
+                            name: 'Dirección'
+                        },
+                        {
+                            name: 'Suspensión'
+                        },
+                        {
+                            name: 'Transmisión'
+                        },
+                        {
+                            name: 'Aceite'
+                        }
+                    ]
+                },
+                {
+                    name: 'Eléctricas'
+                },
+                {
+                    name: 'Refrigeración'
+                },
+                {
+                    name: 'Interior'
                 },
             ]
         }

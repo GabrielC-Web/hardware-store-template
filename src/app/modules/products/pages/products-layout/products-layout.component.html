@@ -1,0 +1,21 @@
+<!-- mat-sidenav -->
+
+<mat-sidenav-container class="w-100 h-100 p-3 bg-white" style="max-height: 100%;">
+
+    <mat-sidenav class="mt-5 px-2 border-0" style="width: 20%;min-width: 250px;max-width: 300px;" [opened]="true"
+        [mode]="'side'">
+
+        <cmp-produtcs-sidenav></cmp-produtcs-sidenav>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="pt-5" style="width: 80%;">
+        <!-- Filtro -->
+
+        <!-- grid de productos -->
+        <cmp-products-grid class="w-100" [products]="products"
+            [imageSize]="{width: '70%',height: '90%'}"></cmp-products-grid>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,91 @@
+<div class="h-100">
+
+    <div class="border">
+
+        <div class="border p-2 w-100">
+            <h5 class="text-center cmm-txt-thin-bold">CATEGORÍAS</h5>
+        </div>
+
+        <!-- Caja de categoría -->
+        <div *ngFor="let item of categorieTypes" class="border py-2 px-3 w-100">
+
+            <!-- Categoría principal -->
+            <mat-expansion-panel hideToggle class="w-100 h-100">
+
+                <mat-expansion-panel-header class="w-100 h-100">
+
+                    <!-- Título -->
+                    <mat-panel-title class="d-flex justify-content-between">
+                        <h6 class=" text-start cmm-txt-thin-bold cursor-pointer">{{item.name}}</h6>
+                        <mat-icon *ngIf="item.children?.length" class="cursor-pointer">expand_more</mat-icon>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <!-- Categorías hijas -->
+                <div class="d-flex flex-column cursor-pointer ms-2">
+                    <span *ngFor="let child of item.children" class="my-1">{{child.name}}</span>
+                </div>
+
+            </mat-expansion-panel>
+
+
+        </div>
+
+    </div>
+
+    <div class="border mt-5">
+
+        <div class="border p-2 w-100">
+            <h5 class="text-center cmm-txt-thin-bold">CATEGORÍAS</h5>
+        </div>
+
+        <div class="p-3">
+
+            <!-- Categorías hijas -->
+            <div class="d-flex flex-column cursor-pointer ms-2">
+                <span class="my-1">Ref $100 - $76</span>
+            </div>
+            <div class="d-flex flex-column cursor-pointer ms-2">
+                <span class="my-1">Ref $100 - $76</span>
+            </div>
+            <div class="d-flex flex-column cursor-pointer ms-2">
+                <span class="my-1">Ref $100 - $76</span>
+            </div>
+            <div class="d-flex flex-column cursor-pointer ms-2">
+                <span class="my-1">Ref $100 - $76</span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="border mt-5">
+
+        <div class="border p-2 w-100">
+            <h5 class="text-center cmm-txt-thin-bold">DESTACADOS</h5>
+        </div>
+
+        <div class="p-3">
+
+            <!-- Categorías hijas -->
+            <div class="d-flex flex-column cursor-pointer ms-2">
+                <span class="my-1">Ref $100 - $76</span>
+            </div>
+            <div class="d-flex flex-column cursor-pointer ms-2">
+                <span class="my-1">Ref $100 - $76</span>
+            </div>
+            <div class="d-flex flex-column cursor-pointer ms-2">
+                <span class="my-1">Ref $100 - $76</span>
+            </div>
+            <div class="d-flex flex-column cursor-pointer ms-2">
+                <span class="my-1">Ref $100 - $76</span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
