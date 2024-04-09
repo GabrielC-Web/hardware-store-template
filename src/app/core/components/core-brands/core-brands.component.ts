@@ -11,10 +11,6 @@ export class CoreBrandsComponent {
   /**
    * Logos
   */
-  @Input() brandImages: string[] = [
-    logos.dior,
-    logos.paco_rabanne,
-    logos.antonioBanderas
-  ]
+  @Input() brandImages: string[] = []
 
 }

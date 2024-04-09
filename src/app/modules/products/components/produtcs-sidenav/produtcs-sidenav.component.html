@@ -34,6 +34,7 @@
 
     </div>
 
+    <!-- Categorías -->
     <div class="border mt-5">
 
         <div class="border p-2 w-100">
@@ -61,6 +62,7 @@
 
     </div>
 
+    <!-- Destacados -->
     <div class="border mt-5">
 
         <div class="border p-2 w-100">
@@ -69,22 +71,68 @@
 
         <div class="p-3">
 
-            <!-- Categorías hijas -->
-            <div class="d-flex flex-column cursor-pointer ms-2">
-                <span class="my-1">Ref $100 - $76</span>
-            </div>
-            <div class="d-flex flex-column cursor-pointer ms-2">
-                <span class="my-1">Ref $100 - $76</span>
-            </div>
-            <div class="d-flex flex-column cursor-pointer ms-2">
-                <span class="my-1">Ref $100 - $76</span>
-            </div>
-            <div class="d-flex flex-column cursor-pointer ms-2">
-                <span class="my-1">Ref $100 - $76</span>
+            <!-- Carousel-->
+            <div id="carousel" class="container carousel carousel-dark slide d-flex align-items-center"
+                data-bs-touch="false" data-bs-pause="true">
+
+                <!-- Indicadores de cantidade de porductos en el carrucel -->
+                <div class="carousel-indicators">
+
+                    <button *ngFor="let button of carouselData, index as i" type="button" data-bs-target="#carousel"
+                        (click)="selectTemplate(i)" attr.data-bs-slide-to="{{i}}" [ngClass]="{'active': i == 0}"
+                        aria-label="Slide 1"></button>
+
+                </div>
+
+                <!-- contendor de imagenes -->
+                <div class="carousel-inner h-100 pb-5">
+
+                    <!-- Plantilla -->
+                    <div *ngFor="let product of carouselData, index as i" class="carousel-item h-100"
+                        [ngClass]="{'active': i == 0}" data-bs-interval="5000">
+
+                        <div class="col-12 col-md-10 col-lg-8 h-100 p-0 mx-auto d-flex align-items-center">
+
+                            <img [src]="product.image" class="d-block mx-auto rounded"
+                                style="max-height: 85%; max-width: 80%;" alt="imagen de la plantilla">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- botones -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev"
+                    (click)="prevElement()">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next"
+                    (click)="nextElement()">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
             </div>
 
         </div>
 
+
+        <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+            <h5 class="text-center">
+                descripción del producto
+            </h5>
+
+            <span style="text-decoration: line-through;">{{currentProduct.originalPrice}}</span>
+            <span>{{currentProduct.discountPrice}}</span>
+
+            <cmp-core-button class="mt-3" customBgColor="#e81313">
+                Agregar al carrito
+            </cmp-core-button>
+
+        </div>
 
     </div>
 

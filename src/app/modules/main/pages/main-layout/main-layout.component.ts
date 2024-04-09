@@ -9,13 +9,15 @@ export class MainLayoutComponent {
 
   headerHeight: number = 0
 
+  footerHeight: number = 0
+
   constructor() { }
 
   ngOnInit() {
 
     this.headerHeight = document.getElementById('header')?.offsetHeight as number
 
-    console.log(this.headerHeight);
+    this.footerHeight = document.getElementById('footer')?.offsetHeight as number
 
   }
 

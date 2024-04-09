@@ -9,6 +9,8 @@ export class CoreButtonComponent {
 
   @Input() mode: 'light' | 'dark' = 'dark'
 
+  @Input() customBgColor: string = ''
+
   darkBg = '#010101'
 
   lightBg = 'rgba(255, 255, 255, 0.7)'
