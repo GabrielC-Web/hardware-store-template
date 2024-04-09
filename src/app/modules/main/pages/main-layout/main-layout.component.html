@@ -1,13 +1,13 @@
-<div class="container-fluid g-0">
+<div class="container-fluid g-0 vh-100 overflow-x-hidden d-flex flex-column justify-content-between">
 
-    <!-- Espacio para el navbar -->
-    <cmp-main-header id="header"></cmp-main-header>
+    <main class="row w-100 g-0 align-items-start" style="margin-bottom: 100px;"
+        [ngStyle]="{'height': 'calc(100% - ' + footerHeight + 'px)'}">
 
-    <main class="row w-100 g-0" style="margin-bottom: 100px;"
-        [ngStyle]="{'height': 'calc(100% - ' + headerHeight + 'px)'}">
+        <!-- Espacio para el navbar -->
+        <cmp-main-header id="header" class="overflow-hidden w-100" style="height: fit-content;"></cmp-main-header>
 
         <!-- Contenido principal -->
-        <div class="overflow-x-hidden">
+        <div class="overflow-hidden">
 
             <router-outlet></router-outlet>
 

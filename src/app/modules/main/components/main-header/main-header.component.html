@@ -1,52 +1,54 @@
-<mat-toolbar class="p-0 d-flex flex-column h-100" id="toolbar">
+<div style="height: fit-content;">
+    <mat-toolbar class="p-0 d-flex flex-column h-100" id="toolbar">
 
-    <div class="bg-black w-100 d-flex justify-content-evenly align-items-center border-bottom">
+        <div class="bg-black w-100 d-flex justify-content-evenly align-items-center border-bottom">
 
-        <!-- Logo principal -->
-        <img class="cursor-pointer" [src]="mainData.mainLogo" width="100px" height="100px" [routerLink]="'home'">
+            <!-- Logo principal -->
+            <img class="cursor-pointer" [src]="mainData.mainLogo" width="100px" height="100px" [routerLink]="'home'">
 
-        <!-- Buscador -->
-        <cmm-cmp-i-text class="w-40" [subscriptSizing]="'dynamic'">
-            <mat-icon>search</mat-icon>
-        </cmm-cmp-i-text>
+            <!-- Buscador -->
+            <cmm-cmp-i-text class="w-40" [subscriptSizing]="'dynamic'">
+                <mat-icon>search</mat-icon>
+            </cmm-cmp-i-text>
 
-        <div class="d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center">
 
-            <div class="d-flex flex-column">
-                <span class="text-white">Mi cuenta</span>
-                <span class="text-white fs-14">Hola. Ingresar</span>
+                <div class="d-flex flex-column">
+                    <span class="text-white">Mi cuenta</span>
+                    <span class="text-white fs-14">Hola. Ingresar</span>
+                </div>
+
+                <mat-icon class="text-white fs-30 w-30 cursor-pointer"
+                    style="height: 30px !important;">arrow_drop_down</mat-icon>
             </div>
 
-            <mat-icon class="text-white fs-30 w-30 cursor-pointer"
-                style="height: 30px !important;">arrow_drop_down</mat-icon>
-        </div>
+            <!-- Íconos -->
+            <span>
+                <img class="cursor-pointer" [src]="mainData.navBar.buttons.favourites.image" width="50px" height="50px">
+                <img class="cursor-pointer" [src]="mainData.navBar.buttons.kart.image" width="50px" height="50px"
+                    [routerLink]="'products/overview'">
+            </span>
 
-        <!-- Íconos -->
-        <span>
-            <img class="cursor-pointer" [src]="mainData.navBar.buttons.favourites.image" width="50px" height="50px">
-            <img class="cursor-pointer" [src]="mainData.navBar.buttons.kart.image" width="50px" height="50px"
-                [routerLink]="'products/overview'">
-        </span>
-
-
-    </div>
-
-    <div class="w-100 text-white cmm-txt-thin-bold p-3 d-flex justify-content-evenly"
-        style="background-color: #e81313;">
-
-        <div *ngFor="let button of mainData.navBar.menus.buttons" class="">
-
-            <button mat-button [matMenuTriggerFor]="belowMenu">{{button.text}}</button>
-
-            <mat-menu #belowMenu="matMenu" yPosition="below" [ngClass]="button.matMenus.length == 0? 'd-none': ''">
-
-                <button *ngFor="let item of button.matMenus" mat-menu-item>{{item}}</button>
-
-            </mat-menu>
 
         </div>
 
+        <div class="w-100 text-white cmm-txt-thin-bold p-3 d-flex justify-content-evenly"
+            style="background-color: #e81313;">
 
-    </div>
+            <div *ngFor="let button of mainData.navBar.menus.buttons" class="">
 
-</mat-toolbar>
+                <button mat-button [matMenuTriggerFor]="belowMenu">{{button.text}}</button>
+
+                <mat-menu #belowMenu="matMenu" yPosition="below" [ngClass]="button.matMenus.length == 0? 'd-none': ''">
+
+                    <button *ngFor="let item of button.matMenus" mat-menu-item>{{item}}</button>
+
+                </mat-menu>
+
+            </div>
+
+
+        </div>
+
+    </mat-toolbar>
+</div>
