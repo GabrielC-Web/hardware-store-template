@@ -8,9 +8,17 @@ export const CC_PROJECT_INITIALS = 'f-template';
 })
 export class AppComponent {
 
+  constructor() {
+
+  }
+
   ngOnInit(): void {
     AOS.init();
     window.addEventListener('load', AOS.refresh)
+
+    document.documentElement.style.setProperty('--v-dynamic-primary', '#e81313');
+    document.documentElement.style.setProperty('--v-dynamic-primary-selected', '#e81313');
+
   }
 
 }
