@@ -12,4 +12,65 @@ export class HomeLayoutComponent {
     products.sparePart9
   ]
 
+  popularProducts: any[] = [
+    {
+        img: products.sparePart1,
+        productName: 'GENERAL MOTORS',
+        brandName: 'Refrigerante Dex Cool Importado',
+        originalPrice: 'Ref.23.00',
+        discountPrice: 'Ref.22.00'
+    },
+    {
+        img: products.sparePart2,
+        productName: 'GENERAL MOTORS',
+        brandName: 'Refrigerante Dex Cool Importado',
+        originalPrice: 'Ref.23.00',
+        discountPrice: 'Ref.22.00'
+    },
+    {
+        img: products.sparePart3,
+        productName: 'GENERAL MOTORS',
+        brandName: 'Refrigerante Dex Cool Importado',
+        originalPrice: 'Ref.23.00',
+        discountPrice: 'Ref.22.00'
+    },
+    {
+        img: products.sparePart4,
+        productName: 'GENERAL MOTORS',
+        brandName: 'Refrigerante Dex Cool Importado',
+        originalPrice: 'Ref.23.00',
+        discountPrice: 'Ref.22.00'
+    },
+    {
+        img: products.sparePart5,
+        productName: 'GENERAL MOTORS',
+        brandName: 'Refrigerante Dex Cool Importado',
+        originalPrice: 'Ref.23.00',
+        discountPrice: 'Ref.22.00'
+    },
+    {
+        img: products.sparePart6,
+        productName: 'GENERAL MOTORS',
+        brandName: 'Refrigerante Dex Cool Importado',
+        originalPrice: 'Ref.23.00',
+        discountPrice: 'Ref.22.00'
+    },
+    {
+        img: products.sparePart7,
+        productName: 'GENERAL MOTORS',
+        brandName: 'Refrigerante Dex Cool Importado',
+        originalPrice: 'Ref.23.00',
+        discountPrice: 'Ref.22.00'
+    },
+    {
+        img: products.sparePart8,
+        productName: 'GENERAL MOTORS',
+        brandName: 'Refrigerante Dex Cool Importado',
+        originalPrice: 'Ref.23.00',
+        discountPrice: 'Ref.22.00'
+    },
+  ]
+
+  bigBottomAd = products.sparePart10
+
 }
