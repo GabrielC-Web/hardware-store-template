@@ -46,9 +46,6 @@ export class MainHeaderComponent {
    */
   changeFilterSize() {
     this.filtersExpanded = !this.filtersExpanded
-
-    this.resizeEvent.emit()
-
   }
 
 }

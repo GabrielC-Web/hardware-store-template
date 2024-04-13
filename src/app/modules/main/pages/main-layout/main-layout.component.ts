@@ -14,6 +14,13 @@ export class MainLayoutComponent {
     this.calculateHeaderSize()
   }
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+
+    this.repositionHeader()
+
+  }
+
   constructor() { }
 
   ngOnInit() {
@@ -31,10 +38,28 @@ export class MainLayoutComponent {
    */
   calculateHeaderSize() {
     this.headerHeight = document.getElementById('header')?.offsetHeight as number
-    console.log(this.headerHeight);
   }
 
   getMainData() {
+
+  }
+
+  /**
+   * Reposiciona el header dependiendo de la posición de scroll
+   */
+  repositionHeader() {
+
+    let header = document.getElementById('header')
+
+    if (header && window.scrollY > header?.offsetHeight) {
+
+      header.classList.add('fixed_header')
+
+    } else if (header && window.scrollY <= header?.offsetHeight) {
+
+      header.classList.remove('fixed_header')
+
+    }
 
   }
 

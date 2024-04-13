@@ -1,14 +1,13 @@
-<div class="container-fluid g-0 vh-100 overflow-x-hidden d-flex flex-column justify-content-between">
+<div class="container-fluid g-0 overflow-x-hidden d-flex flex-column justify-content-between"
+    style="overflow-y: scroll;min-height: 100vh;">
 
     <main class="row w-100 g-0 align-items-start" style="margin-bottom: 100px;">
 
         <!-- Espacio para el navbar -->
-        <cmp-main-header id="header" class="w-100"
-            style="position: fixed !important;max-height: fit-content !important;z-index: 1000;"
-            (resizeEvent)="calculateHeaderSize()"></cmp-main-header>
+        <cmp-main-header id="header" class="w-100"></cmp-main-header>
 
         <!-- Contenido principal -->
-        <div class="mx-auto" [ngStyle]="{'margin-top': headerHeight + 'px'}" style="max-width: 1200px;">
+        <div class="mx-auto" style="max-width: 1200px;">
 
             <router-outlet></router-outlet>
 
