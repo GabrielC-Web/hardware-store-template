@@ -13,4 +13,20 @@ export class MainHeaderComponent {
    */
   mainData = mainData
 
+  /**
+   * Indica si el menú de filtros está expandido
+   */
+  filtersExpanded: boolean = true
+
+  ngOnInit() {
+
+    //* Oculto el menú en tamaños pequeños
+    if (window.innerWidth <= 567) {
+
+      this.filtersExpanded = false
+
+    }
+
+  }
+
 }

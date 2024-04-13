@@ -52,8 +52,13 @@
         </div>
 
         <!-- Piso de abajo -->
-        <div class="w-100 row text-white cmm-txt-thin-bold p-3 justify-content-center justify-content-sm-evenly"
+        <div *ngIf="filtersExpanded"
+            class="w-100 row text-white cmm-txt-thin-bold p-3 justify-content-center justify-content-sm-evenly position-relative"
             style="background-color: #e81313;">
+
+            <mat-icon class="d-flex d-md-none text-white cursor-pointer position-absolute p-0"
+                style="right: 0;transform: translateX(-50%);top: 8px;right: 4px;"
+                (click)="filtersExpanded = false">menu</mat-icon>
 
             <div *ngFor="let button of mainData.navBar.menus.buttons"
                 class="col-12 col-sm-4 col-md-3 col-lg-1 d-flex justify-content-center">
@@ -69,6 +74,11 @@
             </div>
 
 
+        </div>
+
+        <div *ngIf="!filtersExpanded" class="w-100 d-flex align-items-center justify-content-end px-3"
+            style="height: 40px;background-color: #e81313;">
+            <mat-icon class="text-white cursor-pointer" (click)="filtersExpanded = true">menu</mat-icon>
         </div>
 
     </mat-toolbar>
