@@ -4,3 +4,15 @@
     background-position: center;
     max-width: 100%;
 }
+
+.dynamicWidth {
+    width: 50% !important;
+}
+
+@media (max-width: 768px) {
+
+    .dynamicWidth {
+        width: 100% !important;
+    }
+
+}
