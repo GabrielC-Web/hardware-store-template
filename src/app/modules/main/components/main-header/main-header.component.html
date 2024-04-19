@@ -65,7 +65,7 @@
 
             <mat-menu #belowMenu="matMenu" yPosition="below" [ngClass]="button.matMenus.length == 0? 'd-none': ''">
 
-                <button *ngFor="let item of button.matMenus" mat-menu-item>{{item}}</button>
+                <button *ngFor="let item of button.matMenus" mat-menu-item routerLink="/products">{{item}}</button>
 
             </mat-menu>
 

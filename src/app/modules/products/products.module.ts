@@ -10,6 +10,7 @@ import { ProdutcsSidenavComponent } from './components/produtcs-sidenav/produtcs
 import { CoreModule } from 'src/app/core/core.module';
 import { ProductsDetailLayoutComponent } from './pages/products-detail-layout/products-detail-layout.component';
 import { ProductsDetailComponent } from './components/products-detail/products-detail.component';
+import { ProductsOverviewLayoutComponent } from './pages/products-overview-layout/products-overview-layout.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ProductsDetailComponent } from './components/products-detail/products-d
     ProductsPaginatorComponent,
     ProdutcsSidenavComponent,
     ProductsDetailLayoutComponent,
-    ProductsDetailComponent
+    ProductsDetailComponent,
+    ProductsOverviewLayoutComponent
   ],
   imports: [
     CommonModule,
