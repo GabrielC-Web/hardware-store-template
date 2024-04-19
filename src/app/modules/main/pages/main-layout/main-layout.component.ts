@@ -51,11 +51,11 @@ export class MainLayoutComponent {
 
     let header = document.getElementById('header')
 
-    if (header && window.scrollY > header?.offsetHeight) {
+    if (header && window.scrollY > 0) {
 
       header.classList.add('fixed_header')
 
-    } else if (header && window.scrollY <= header?.offsetHeight) {
+    } else if (header && window.scrollY == 0) {
 
       header.classList.remove('fixed_header')
 
