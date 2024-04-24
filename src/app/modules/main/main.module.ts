@@ -6,12 +6,14 @@ import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
 import { CmmModule } from 'src/app/common/common.module';
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
+import { MainSidenavMenuComponent } from './components/main-sidenav-menu/main-sidenav-menu.component';
 
 @NgModule({
   declarations: [
     MainLayoutComponent,
     MainHeaderComponent,
     MainFooterComponent,
+    MainSidenavMenuComponent,
   ],
   imports: [
     CommonModule,

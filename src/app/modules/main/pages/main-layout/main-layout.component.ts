@@ -1,4 +1,5 @@
 import { Component, HostListener, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'pag-main-layout',
@@ -7,60 +8,80 @@ import { Component, HostListener, Output } from '@angular/core';
 })
 export class MainLayoutComponent {
 
-  headerHeight: number = 0
-
-  @HostListener('window:resize')
-  onResize(e: any) {
-    this.calculateHeaderSize()
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  onScroll(event: Event) {
-
-    this.repositionHeader()
-
-  }
-
-  constructor() { }
-
-  ngOnInit() {
-
-  }
-
-  ngAfterViewInit() {
-
-    this.calculateHeaderSize()
-
-  }
-
   /**
-   * Calculo la altura del header
-   */
-  calculateHeaderSize() {
-    this.headerHeight = document.getElementById('header')?.offsetHeight as number
-  }
+     * Indica si el sidenav está abierto
+     */
+    sidenavOpen: boolean = false
 
-  getMainData() {
+    /**
+     * Ruta actual en la que estoy
+     */
+    currentRoute: string = ''
 
-  }
+    /**
+     * Indica si debo poner el layout en modo responsive
+     */
+    smallMode: boolean = false
 
-  /**
-   * Reposiciona el header dependiendo de la posición de scroll
-   */
-  repositionHeader() {
+    /**
+     * Espacio que se le dará al anuncio superior
+     */
+    headerAppSpace: number = 0
 
-    let header = document.getElementById('header')
+    /**
+     * Indica si debo mostrar el anuncio de arriba
+     */
+    showTopAnnouce: boolean = true
 
-    if (header && window.scrollY > 0) {
+    @HostListener('window:resize')
+    onResize(e: Event) {
 
-      header.classList.add('fixed_header')
-
-    } else if (header && window.scrollY == 0) {
-
-      header.classList.remove('fixed_header')
+      if (window.innerWidth <= 992) {
+        this.smallMode = true
+      } else {
+        this.smallMode = false
+      }
 
     }
 
-  }
+    @HostListener('window:scroll')
+    onScroll(e: Event) {
+
+      // console.log(e);
+
+      // console.log(window.scrollY);
+
+    }
+
+    constructor(
+      private router: Router
+    ) {
+
+    }
+
+    ngOnInit() {
+
+      if (window.innerWidth <= 992) {
+        this.smallMode = true
+      } else {
+        this.smallMode = false
+      }
+
+      this.currentRoute = location.href
+      this.listenRouteChanges()
+
+      if(this.showTopAnnouce) {
+        this.headerAppSpace = 60
+      }
+
+    }
+
+    listenRouteChanges() {
+
+      this.router.events.subscribe(event => {
+        this.currentRoute = location.href
+      })
+
+    }
 
 }
