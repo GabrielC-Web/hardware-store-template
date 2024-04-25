@@ -1,8 +1,9 @@
-.home-bg-image {
-    background-size: contain;
+.home_bg {
+    background-size: cover;
     background-repeat: no-repeat;
+    height: 100vh;
     background-position: center;
-    max-width: 100%;
+    // max-width: 100%;
 }
 
 .dynamicWidth {
