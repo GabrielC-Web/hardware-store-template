@@ -19,7 +19,7 @@
             <mat-sidenav-container class="w-100 position-relative">
 
                 <!-- sidenav -->
-                <mat-sidenav class="sidenav" [mode]="productsViewMode? 'side': 'over'"
+                <mat-sidenav class="sidenav border-0" [mode]="productsViewMode? 'side': 'over'"
                     [opened]="productsViewMode? productsViewMode:sidenavOpen" [fixedInViewport]="!productsViewMode"
                     (closed)="sidenavOpen = false"
                     [ngStyle]="{'margin-top': productsViewMode?'':100 + headerAppSpace + 'px'}">

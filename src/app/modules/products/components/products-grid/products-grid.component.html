@@ -1,26 +1,4 @@
-<div class="row w-100 h-100 bg-white">
+<div class="row my-5 w-100 h-100 bg-white">
 
-    <!-- Filtros -->
-
-    <!-- Productos -->
-    <div *ngFor="let post of products" class="col-sm-6 col-md-4 mb-4" [routerLink]="'detail'">
-
-        <div class="w-100 cursor-pointer d-flex justify-content-center">
-
-            <img [ngStyle]="{'width': imageSize.width}" [src]="post.img" alt="" style="aspect-ratio: 9/12;">
-
-        </div>
-
-        <div class="d-flex flex-column text-center mt-4">
-            <strong style="font-weight: 700;">{{post.productName}}</strong>
-            <span>{{post.brandName}}</span>
-            <span style="text-decoration: line-through;">{{post.originalPrice}}</span>
-            <span>{{post.discountPrice}}</span>
-        </div>
-
-    </div>
-
-    <!-- Paginador -->
-    <cmp-cmm-paginator *ngIf="showPaginator"></cmp-cmm-paginator>
 
 </div>
