@@ -88,6 +88,8 @@ export class MainLayoutComponent {
     this.router.events.subscribe(event => {
       this.currentRoute = location.href
 
+      this.sidenavOpen = false
+
       this.checkProductsViewMode()
 
     })
