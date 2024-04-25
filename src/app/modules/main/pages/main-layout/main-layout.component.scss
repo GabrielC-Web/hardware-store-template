@@ -4,3 +4,16 @@
     z-index: 1000;
     transition: all ease;
 }
+
+.sidenav {
+    width: 100%;
+    max-width: 300px;
+}
+
+@media (max-width: 567px) {
+
+    .sidenav {
+        max-width: 100%;
+    }
+
+}

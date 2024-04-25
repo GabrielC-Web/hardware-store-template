@@ -1,0 +1,31 @@
+.header_icon {
+    width: 40px;
+    height: 40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover {
+    background-color: #490708 !important;
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    top: 100%;
+}
+
+.dropdown:hover .dropdown_menu {
+    display: block;
+}

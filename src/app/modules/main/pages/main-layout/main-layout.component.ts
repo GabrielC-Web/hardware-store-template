@@ -11,77 +11,93 @@ export class MainLayoutComponent {
   /**
      * Indica si el sidenav está abierto
      */
-    sidenavOpen: boolean = false
+  sidenavOpen: boolean = false
 
-    /**
-     * Ruta actual en la que estoy
-     */
-    currentRoute: string = ''
+  /**
+   * Ruta actual en la que estoy
+   */
+  currentRoute: string = ''
 
-    /**
-     * Indica si debo poner el layout en modo responsive
-     */
-    smallMode: boolean = false
+  /**
+   * Indica si debo poner el layout en modo responsive
+   */
+  smallMode: boolean = false
 
-    /**
-     * Espacio que se le dará al anuncio superior
-     */
-    headerAppSpace: number = 0
+  /**
+   * Espacio que se le dará al anuncio superior
+   */
+  headerAppSpace: number = 0
 
-    /**
-     * Indica si debo mostrar el anuncio de arriba
-     */
-    showTopAnnouce: boolean = true
+  /**
+   * Indica si debo mostrar el anuncio de arriba
+   */
+  showTopAnnouce: boolean = false
 
-    @HostListener('window:resize')
-    onResize(e: Event) {
+  /**
+   * Indica si estoy en la vista de productos
+   */
+  productsViewMode: boolean = false
 
-      if (window.innerWidth <= 992) {
-        this.smallMode = true
-      } else {
-        this.smallMode = false
-      }
+  @HostListener('window:resize')
+  onResize(e: Event) {
 
+    if (window.innerWidth <= 1200) {
+      this.smallMode = true
+    } else {
+      this.smallMode = false
     }
 
-    @HostListener('window:scroll')
-    onScroll(e: Event) {
+    this.checkProductsViewMode()
 
-      // console.log(e);
+  }
 
-      // console.log(window.scrollY);
+  @HostListener('window:scroll')
+  onScroll(e: Event) {
 
+    // console.log(e);
+
+    // console.log(window.scrollY);
+
+  }
+
+  constructor(
+    private router: Router
+  ) {
+
+  }
+
+  ngOnInit() {
+
+    if (window.innerWidth <= 1200) {
+      this.smallMode = true
+    } else {
+      this.smallMode = false
     }
 
-    constructor(
-      private router: Router
-    ) {
+    this.currentRoute = location.href
+    this.listenRouteChanges()
 
+    if (this.showTopAnnouce) {
+      this.headerAppSpace = 60
     }
 
-    ngOnInit() {
+  }
 
-      if (window.innerWidth <= 992) {
-        this.smallMode = true
-      } else {
-        this.smallMode = false
-      }
+  listenRouteChanges() {
 
+    this.router.events.subscribe(event => {
       this.currentRoute = location.href
-      this.listenRouteChanges()
 
-      if(this.showTopAnnouce) {
-        this.headerAppSpace = 60
-      }
+      this.checkProductsViewMode()
 
-    }
+    })
 
-    listenRouteChanges() {
+  }
 
-      this.router.events.subscribe(event => {
-        this.currentRoute = location.href
-      })
+  checkProductsViewMode() {
+    //* Veo si estoy en la vista de productos
+    this.productsViewMode = location.pathname == '/products' && window.innerWidth > 992
+  }
 
-    }
 
 }

@@ -1,59 +1,42 @@
-<!-- <div class="container-fluid g-0 overflow-x-hidden d-flex flex-column justify-content-between"
-    style="overflow-y: scroll;min-height: 100vh;">
-
-    <main class="row w-100 g-0 align-items-start" style="margin-bottom: 100px;">
-
-        Espacio para el navbar
-        <cmp-main-header id="header" class="w-100"></cmp-main-header>
-
-        Contenido principal
-        <div class="mx-auto" style="max-width: 1200px;">
-
-            <router-outlet></router-outlet>
-
-        </div>
-
-    </main>
-
-    Footer
-    <cmp-main-footer></cmp-main-footer>
-
-</div> -->
-
 <div class="container-fluid g-0 overflow-x-hidden d-flex flex-column justify-content-between"
     style="overflow-y: scroll;min-height: 100vh;">
 
     <main class="row w-100 g-0 justify-content-center align-items-start">
 
-      <!-- Anuncio superior -->
-      <div class="cmm-bg-project-tertiary position-fixed" style="width: 100%;height: 60px;" [ngStyle]="{'z-index':sidenavOpen?'1':'200'}"></div>
+        <!-- Anuncio superior -->
+        <div class="cmm-bg-project-tertiary position-fixed" style="width: 100%;height: 60px;"
+            [ngStyle]="{'z-index':sidenavOpen?'2':'200'}"></div>
 
-      <!-- Espacio para el navbar -->
-      <cmp-main-header id="header" class="w-100 position-fixed header_container"
-          [ngStyle]="{'z-index':sidenavOpen?'1':'200','margin-top':headerAppSpace + 'px'}" (openSidenav)="sidenavOpen = $event"
-          [sidenavOpen]="sidenavOpen"></cmp-main-header>
+        <!-- Espacio para el navbar -->
+        <cmp-main-header id="header" class="w-100 position-fixed header_container"
+            [ngStyle]="{'z-index':sidenavOpen?'2':'200','margin-top':headerAppSpace + 'px'}"
+            (openSidenav)="sidenavOpen = $event" [sidenavOpen]="sidenavOpen"></cmp-main-header>
 
-      <!-- Contenido principal -->
-      <div class="mx-auto w-100 main_container" [ngStyle]="{'margin-top': 184 + headerAppSpace + 'px'}">
+        <!-- Contenido principal -->
+        <div class="mx-auto w-100 main_container"
+            [ngStyle]="{'margin-top': smallMode?100 + headerAppSpace + 'px': 156 + headerAppSpace + 'px'}">
 
-          <mat-sidenav-container class="w-100 position-relative">
+            <mat-sidenav-container class="w-100 position-relative">
 
-              <!-- sidenav -->
-              <mat-sidenav class="w-100" mode="over" [opened]="sidenavOpen" [fixedInViewport]="true">
+                <!-- sidenav -->
+                <mat-sidenav class="sidenav" [mode]="productsViewMode? 'side': 'over'"
+                    [opened]="productsViewMode? productsViewMode:sidenavOpen" [fixedInViewport]="!productsViewMode"
+                    (closed)="sidenavOpen = false"
+                    [ngStyle]="{'margin-top': productsViewMode?'':100 + headerAppSpace + 'px'}">
 
-                  <!-- componente de sidenav -->
-                  <cmp-main-sidenav-menu class="w-100" (closeSidenav)="sidenavOpen = false"></cmp-main-sidenav-menu>
+                    <!-- componente de sidenav -->
+                    <cmp-main-sidenav-menu class="w-100" (closeSidenav)="sidenavOpen = false"></cmp-main-sidenav-menu>
 
-              </mat-sidenav>
+                </mat-sidenav>
 
-              <!-- Contenido principal -->
-              <mat-sidenav-content>
-                  <router-outlet></router-outlet>
-              </mat-sidenav-content>
+                <!-- Contenido principal -->
+                <mat-sidenav-content>
+                    <router-outlet></router-outlet>
+                </mat-sidenav-content>
 
-          </mat-sidenav-container>
+            </mat-sidenav-container>
 
-      </div>
+        </div>
 
     </main>
 

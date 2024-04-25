@@ -1,5 +1,6 @@
 import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { mainData } from '../../models/main.data';
+import { icons, logos } from 'src/assets/images/image-routes';
 
 @Component({
   selector: 'cmp-main-header',
@@ -9,47 +10,124 @@ import { mainData } from '../../models/main.data';
 export class MainHeaderComponent {
 
   /**
-   * Data cableada
+   * Emite evento de abrir sidenav
    */
-  mainData = mainData
-
-  /**
-   * Indica si el menú de filtros está expandido
-   */
-  filtersExpanded: boolean = true
-
-  @Input() sidenavOpen: boolean = false
-
   @Output() openSidenav: EventEmitter<boolean> = new EventEmitter()
 
-  @Output() resizeEvent: EventEmitter<any> = new EventEmitter()
+  /**
+   * Indica si el sidenav está abierto
+   */
+  @Input() sidenavOpen: boolean = false
 
-  @HostListener('window:resize')
-  onResize(e: any) {
-    //* Oculto el menú en tamaños pequeños
-    if (window.innerWidth <= 567) {
+  icons = icons
 
-      this.filtersExpanded = false
-
-    }
-  }
-
-  ngOnInit() {
-
-    //* Oculto el menú en tamaños pequeños
-    if (window.innerWidth <= 567) {
-
-      this.filtersExpanded = false
-
-    }
-
-  }
+  logos = logos
 
   /**
-   * Toggle de los filtros
+   * Enlaces del menú de navegación
    */
-  changeFilterSize() {
-    this.filtersExpanded = !this.filtersExpanded
+  menuLinks: any[] = [
+    {
+      header: 'Todos',
+      items: [
+        'Componentes',
+        'Dirección',
+        'Suspensión',
+        'Transmisión',
+        'Aceite'
+      ]
+    },
+    {
+      header: 'Promociones',
+      items: [
+        'Componentes',
+        'Dirección',
+        'Suspensión',
+        'Transmisión',
+        'Aceite'
+      ]
+    },
+    {
+      header: 'Mantenimiento',
+      items: [
+        'Componentes',
+        'Dirección',
+        'Suspensión',
+        'Transmisión',
+        'Aceite'
+      ]
+    },
+    {
+      header: 'Exterior',
+      items: [
+        'Componentes',
+        'Dirección',
+        'Suspensión',
+        'Transmisión',
+        'Aceite'
+      ]
+    },
+    {
+      header: 'Motor',
+      items: [
+        'Componentes',
+        'Dirección',
+        'Suspensión',
+        'Transmisión',
+        'Aceite'
+      ]
+    },
+    {
+      header: 'Tren Motriz',
+      items: [
+        'Componentes',
+        'Dirección',
+        'Suspensión',
+        'Transmisión',
+        'Aceite'
+      ]
+    },
+    {
+      header: 'Eléctricas',
+      items: [
+        'Componentes',
+        'Dirección',
+        'Suspensión',
+        'Transmisión',
+        'Aceite'
+      ]
+    },
+    {
+      header: 'Refrigeración',
+      items: [
+        'Componentes',
+        'Dirección',
+        'Suspensión',
+        'Transmisión',
+        'Aceite'
+      ]
+    },
+    {
+      header: 'Interior',
+      items: [
+        'Componentes',
+        'Dirección',
+        'Suspensión',
+        'Transmisión',
+        'Aceite'
+      ]
+    },
+  ]
+
+  /**
+   * Toggle el sidenav
+   */
+  toggleSidenav() {
+
+    this.sidenavOpen = !this.sidenavOpen
+
+    this.openSidenav.emit(this.sidenavOpen)
+
   }
 
 }
