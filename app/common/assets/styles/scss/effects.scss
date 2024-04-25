@@ -414,6 +414,9 @@ END CARDS
   width: fit-content !important;
 }
 
+.h-fit {
+  height: fit-content !important;
+}
 
 /*--------------------------------------------------------------------------------------------------------------------------------------
  END CLASES PARA LOS tamaños
@@ -452,6 +455,10 @@ END CARDS
 
 .scale-5 {
   transform: scale(1.5);
+}
+
+.small-scale:hover {
+  scale: 1.05;
 }
 
 .purple-shadow {
