@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { products } from 'src/assets/images/image-routes';
 
 @Component({
@@ -26,7 +26,7 @@ export class ProductsDetailComponent {
     brand: 'GENERAL MOTORS',
     price: '175.00',
     details: {
-      'SKU':'KROGGM93746917',
+      'SKU': 'KROGGM93746917',
       'No. de Parte': '93746917',
       'Compra Máxima': '1 unidad'
     },
@@ -43,6 +43,36 @@ export class ProductsDetailComponent {
         '2005-2014 | CHEVROLET | AVEO | 5 PUERTAS',
       ]
     }
+  }
+
+  /**
+   * Indica si muestro la sombra
+   */
+  displayShadow: boolean = false
+
+  @HostListener('window:resize', ['$event'])
+  onResize(e: Event) {
+
+    if (window.innerWidth <= 767) {
+      this.displayShadow = true
+    } else {
+      this.displayShadow = false
+    }
+
+  }
+
+  constructor() { }
+
+  ngOnInit() {
+
+    if (window.innerWidth <= 767) {
+      this.displayShadow = true
+    } else {
+      this.displayShadow = false
+    }
+
+    console.log(this.displayShadow);
+
   }
 
 }
