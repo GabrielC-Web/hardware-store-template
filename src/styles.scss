@@ -17,6 +17,10 @@
     box-sizing: border-box;
 }
 
+.border_main {
+    border: 1px solid var(--v-dynamic-primary);
+}
+
 body {
     background-color: white;
 }
