@@ -1,13 +1,13 @@
 {
   "name": "hardware-store-template",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/hardware-store-templare/"
+    "deploy": "ng deploy --base-href=/hardware-store-template/"
   },
   "private": true,
   "dependencies": {
