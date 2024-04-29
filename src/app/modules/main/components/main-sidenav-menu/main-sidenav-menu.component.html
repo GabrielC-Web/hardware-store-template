@@ -16,22 +16,24 @@
 
         <!-- Íconos -->
         <span class="d-flex flex-column align-items-center justify-content-center">
+
             <mat-icon class="cursor-pointer fs-40"
                 style="width: 40px !important;height: 40px !important;">favorite_outline</mat-icon>
+
             <mat-icon class="cursor-pointer fs-40" style="width: 40px !important;height: 40px !important;"
-                [routerLink]="'products/overview'">shopping_cart_outline</mat-icon>
+                [routerLink]="'products/overview'">shopping_cart</mat-icon>
         </span>
 
     </div>
 
     <div class="border">
 
-        <div class="border p-2 w-100">
+        <div class="p-2 w-100">
             <h5 class="text-center cmm-txt-thin-bold">CATEGORÍAS</h5>
         </div>
 
         <!-- Caja de categoría -->
-        <div *ngFor="let item of categorieTypes" class="border py-2 px-3 w-100">
+        <div *ngFor="let item of categorieTypes" class="border-bottom border-top py-2 px-3 w-100">
 
             <!-- Categoría principal -->
             <mat-expansion-panel *ngIf="item.children?.length" hideToggle class="w-100 h-100">
