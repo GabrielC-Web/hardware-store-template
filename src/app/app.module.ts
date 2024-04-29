@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app.routing.module';
+import { AppRoutingModule, routes } from './app.routing.module';
 import { CmmModule } from './common/common.module';
 import { CmmAuthGuard } from './common/guards/auth.guard';
 import { CmmHttpInterceptor } from './common/interceptors/http.interceptor';
@@ -26,7 +26,7 @@ import { CmmTimerSessionService } from './common/services/timer-session.service'
         RouterModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        RouterModule.forRoot([]),
+        RouterModule.forRoot(routes, { scrollPositionRestoration: "enabled" }),
     ],
     providers: [
         CmmDataService,
