@@ -1,5 +1,29 @@
 <div class="w-100 p-4">
 
+    <div class="border d-flex flex-column align-items-center p-3">
+
+        <!-- Botón de ir al perfil -->
+        <div class="d-flex align-items-center justify-content-center mb-4">
+
+            <div class="d-flex flex-column">
+                <span class="text-black">Mi cuenta</span>
+                <span class="text-black fs-14">Hola. Ingresar</span>
+            </div>
+
+            <mat-icon class="text-black fs-30 w-30 cursor-pointer"
+                style="height: 30px !important;">arrow_drop_down</mat-icon>
+        </div>
+
+        <!-- Íconos -->
+        <span class="d-flex flex-column align-items-center justify-content-center">
+            <mat-icon class="cursor-pointer fs-40"
+                style="width: 40px !important;height: 40px !important;">favorite_outline</mat-icon>
+            <mat-icon class="cursor-pointer fs-40" style="width: 40px !important;height: 40px !important;"
+                [routerLink]="'products/overview'">shopping_cart_outline</mat-icon>
+        </span>
+
+    </div>
+
     <div class="border">
 
         <div class="border p-2 w-100">
@@ -10,9 +34,9 @@
         <div *ngFor="let item of categorieTypes" class="border py-2 px-3 w-100">
 
             <!-- Categoría principal -->
-            <mat-expansion-panel hideToggle class="w-100 h-100">
+            <mat-expansion-panel *ngIf="item.children?.length" hideToggle class="w-100 h-100">
 
-                <mat-expansion-panel-header class="w-100 h-100" routerLink="/products">
+                <mat-expansion-panel-header class="w-100 h-100">
 
                     <!-- Título -->
                     <mat-panel-title class="d-flex justify-content-between">
@@ -29,6 +53,11 @@
 
             </mat-expansion-panel>
 
+            <!-- Link sin expansion -->
+            <span *ngIf="!item.children?.length" class="px-4 d-flex align-items-center w-100 cursor-pointer"
+                routerLink="/products" (click)="closeSidenav.emit()">
+                <a class="text-black text-decoration-none cmm-txt-thin-bold" routerLink="/products">{{item.name}}</a>
+            </span>
 
         </div>
 

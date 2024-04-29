@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { mainData } from '../../models/main.data';
-import { products } from 'src/assets/images/image-routes';
+import { icons, products } from 'src/assets/images/image-routes';
 
 @Component({
   selector: 'cmp-main-sidenav-menu',
@@ -10,6 +10,8 @@ import { products } from 'src/assets/images/image-routes';
 export class MainSidenavMenuComponent {
 
   @Output() closeSidenav: EventEmitter<boolean> = new EventEmitter()
+
+  icons = icons
 
   categorieTypes = mainData.productsModule.sidenav.categorieTypes
 
