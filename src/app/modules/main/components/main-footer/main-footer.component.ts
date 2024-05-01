@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { facebookIcon, twitterIcon } from 'src/app/common/assets/images/images-routes';
+import { facebookIcon, twitterIcon, whatsappIcon } from 'src/app/common/assets/images/images-routes';
 import { icons } from 'src/assets/images/image-routes';
 
 @Component({
@@ -16,6 +16,6 @@ export class MainFooterComponent {
 
   instagramIcon = icons.instagram
 
-  whatsappIcon = icons.whatsapp
+  whatsappIcon = whatsappIcon
 
 }
