@@ -1,5 +1,6 @@
 import { Component, HostListener, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { CmmEcomSpecialFiltersConfig } from 'src/app/common/data/utils/models/ecommerce.models';
 
 @Component({
   selector: 'pag-main-layout',
@@ -37,6 +38,26 @@ export class MainLayoutComponent {
    * Indica si estoy en la vista de productos
    */
   productsViewMode: boolean = false
+
+  /**
+   * Veo si estoy en la vista de productos
+   */
+  inProductsView: boolean = false
+
+  /**
+   * Configuración de los filtros
+   */
+  filtersConfig: CmmEcomSpecialFiltersConfig = {
+    text: 'BUSCA TU VEHÍCULO',
+    buttonText: 'Ir',
+    bgClass: 'gray_bg',
+    filters: [
+      'MARCA',
+      'MODELO',
+      'AÑO',
+      'VERSIÓN',
+    ]
+  }
 
   @HostListener('window:resize')
   onResize(e: Event) {
@@ -99,6 +120,9 @@ export class MainLayoutComponent {
   checkProductsViewMode() {
     //* Veo si estoy en la vista de productos
     this.productsViewMode = location.pathname == '/products' && window.innerWidth > 992
+
+    this.inProductsView = location.pathname == '/products'
+
   }
 
 
