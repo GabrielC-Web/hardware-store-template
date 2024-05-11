@@ -3,6 +3,26 @@
 
 <div class="row w-100 h-100 bg-white overflow-hidden">
 
+    <div class="d-flex justify-content-evenly my-5 w-100">
+
+        <h3 class="cmm-txt-thin-bold">Tren Motriz</h3>
+
+        <select class="px-3" name="" id="">
+
+            <option value="">30 PRODUCTOS POR PÁGINA</option>
+
+        </select>
+
+        <h3>Ordenar por:</h3>
+
+        <select class="px-3" name="" id="">
+
+            <option value="">ÍTEMS DESTACADOS</option>
+
+        </select>
+
+    </div>
+
     <!-- Productos -->
     <div *ngFor="let post of products" class="col-sm-6 col-md-4 col-xl-3 mb-4" style="max-width: 300px;"
         [routerLink]="'detail'">
