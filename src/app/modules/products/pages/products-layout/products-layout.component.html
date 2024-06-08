@@ -1,9 +1,9 @@
 <!-- mat-sidenav -->
 <!-- grid de productos -->
 
-<div class="row w-100 h-100 bg-white overflow-hidden">
+<div class="row w-100 mx-auto justify-content-center h-100 bg-white overflow-hidden">
 
-    <div class="d-flex justify-content-evenly my-5 w-100">
+    <div class="d-flex flex-column flex-md-row justify-content-evenly my-5 px-3 w-100">
 
         <h3 class="cmm-txt-thin-bold">Tren Motriz</h3>
 
@@ -13,7 +13,7 @@
 
         </select>
 
-        <h3>Ordenar por:</h3>
+        <h3 class="mx-3">Ordenar por:</h3>
 
         <select class="px-3" name="" id="">
 
@@ -25,7 +25,7 @@
 
     <!-- Productos -->
     <div *ngFor="let post of products" class="col-sm-6 col-md-4 col-xl-3 mb-4" style="max-width: 300px;"
-        [routerLink]="'detail'">
+        [routerLink]="'Detalle'">
 
         <div class="w-100 cursor-pointer d-flex justify-content-center">
 

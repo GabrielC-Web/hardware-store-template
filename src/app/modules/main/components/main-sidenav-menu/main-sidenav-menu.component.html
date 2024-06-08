@@ -21,7 +21,7 @@
                 style="width: 40px !important;height: 40px !important;">favorite_outline</mat-icon>
 
             <mat-icon class="cursor-pointer fs-40" style="width: 40px !important;height: 40px !important;"
-                [routerLink]="'products/overview'">shopping_cart</mat-icon>
+                [routerLink]="'Productos/Carrito'">shopping_cart</mat-icon>
         </span>
 
     </div>
@@ -50,15 +50,15 @@
 
                 <!-- Categorías hijas -->
                 <div class="d-flex flex-column cursor-pointer ms-2">
-                    <span *ngFor="let child of item.children" class="my-1" routerLink="/products">{{child.name}}</span>
+                    <span *ngFor="let child of item.children" class="my-1" routerLink="/Productos">{{child.name}}</span>
                 </div>
 
             </mat-expansion-panel>
 
             <!-- Link sin expansion -->
             <span *ngIf="!item.children?.length" class="px-4 d-flex align-items-center w-100 cursor-pointer"
-                routerLink="/products" (click)="closeSidenav.emit()">
-                <a class="text-black text-decoration-none cmm-txt-thin-bold" routerLink="/products">{{item.name}}</a>
+                routerLink="/Productos" (click)="closeSidenav.emit()">
+                <a class="text-black text-decoration-none cmm-txt-thin-bold" routerLink="/Productos">{{item.name}}</a>
             </span>
 
         </div>
