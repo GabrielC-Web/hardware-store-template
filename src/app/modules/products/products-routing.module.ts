@@ -11,11 +11,11 @@ const routes: Routes = [
     component: ProductsLayoutComponent
   },
   {
-    path: 'detail',
+    path: 'Detalle',
     component: ProductsDetailLayoutComponent
   },
   {
-    path: 'overview',
+    path: 'Carrito',
     component: ProductsOverviewLayoutComponent
   },
 ];
